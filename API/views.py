@@ -59,6 +59,8 @@ class AsistenciaListarViewSet(generics.ListAPIView):
     queryset = Asistencia.objects.all()
     serializer_class = AsistenciaSerializer
 
+
+
 @csrf_exempt
 def AlumnoApi(request):
     if request.method=='GET':
@@ -127,7 +129,7 @@ def AsistenciaApi(request):
         return JsonResponse(asistencia_serializar.data,safe=False)
     if request.method=='POST':
         asistencia_data= JSONParser().parse(request)
-        asistencia_serializar = ProfesorSerializer(data=asistencia_data)
+        asistencia_serializar = AsistenciaSerializer(data=asistencia_data)
         if asistencia_serializar.is_valid():
             asistencia_serializar.save()
             return JsonResponse("Agrego persona",safe=False)
