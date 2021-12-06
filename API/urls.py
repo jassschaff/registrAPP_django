@@ -13,6 +13,8 @@ urlpatterns ={
     url(r'^api/asistencia_crear/$',views.AsistenciaViewCreateSet.as_view()),
     url(r'^api/asistencia_listar/$',views.AsistenciaListarViewSet.as_view()),
     url(r'^api/conteo/$',views.conteo_asistencia),
+    url(r'^api/alumno_api/$',views.AlumnoApi),
+    url(r'^api/asistencia_api/$',views.AsistenciaApi),
 }
 
 urlpatterns= format_suffix_patterns(urlpatterns) 

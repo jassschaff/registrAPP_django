@@ -150,6 +150,7 @@ def AsistenciaApi(request):
             return JsonResponse("modifico",safe=False)
         return JsonResponse("no modifico",safe=False)
 
+
 @csrf_exempt
 def conteo_asistencia(request):
     if request.method=='POST':
